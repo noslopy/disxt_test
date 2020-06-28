@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    container_name: auth_app
+    restart: always
+    build: .
+    ports:
+      - "8080:8000"
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27018:27017"

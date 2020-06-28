@@ -1,0 +1,29 @@
+{
+  "name": "disxt_test",
+  "version": "0.0.0",
+  "description": "Test for DISXT",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noslopy/disxt_test.git"
+  },
+  "author": "noslopy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noslopy/disxt_test/issues"
+  },
+  "homepage": "https://github.com/noslopy/disxt_test#readme",
+  "dependencies": {
+    "accesscontrol": "^2.2.1",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.20"
+  }
+}
