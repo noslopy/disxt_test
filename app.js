@@ -12,17 +12,16 @@ require("dotenv").config({
  
 const app = express();
  
-const PORT = process.env.PORT || 3000;
- 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => {
-  console.log('Connected to the Database successfully');
- });
+    console.log('Connected to the Database successfully');
+  })
  
 app.use(bodyParser.urlencoded({ extended: true }));
  
 app.use(async (req, res, next) => {
+  req.body = req.query
   if (req.headers["x-access-token"]) {
     const accessToken = req.headers["x-access-token"];
     const { userId, exp } = await jwt.verify(accessToken, process.env.JWT_SECRET);
@@ -36,6 +35,6 @@ app.use(async (req, res, next) => {
   } 
 });
  
-app.use('/', routes); app.listen(PORT, () => {
-  console.log('Server is listening on Port:', PORT)
-})
+app.use('/', routes);
+
+module.exports = app;
