@@ -94,7 +94,6 @@ describe('Endpoints', () => {
   it('Read all products with client user', async done => {
     const res = await request.get('/products').set('x-access-token', client_token)
     expect(res.status).toBe(200);
-    console.log(res.body)
     expect(res.body.data.length).not.toBe(0);
     done()
   })
