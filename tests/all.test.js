@@ -1,6 +1,7 @@
 const app = require('../app')
-const supertest = require('supertest');
+const supertest = require('supertest')
 const request = supertest(app)
+const { reset } = require('../lib/db/reset')
 
 // I skipped creating helpers, factories but it would be better that way
 
@@ -8,6 +9,10 @@ describe('Endpoints', () => {
   let admin_token
   let client_token
   let product_id
+
+  beforeAll(() => {
+    reset()
+  })
 
   it('Refuses request without logged in user', async done => {
     const res = await request.get('/products')
