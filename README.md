@@ -1,9 +1,10 @@
 # Test assigment for DISXT
 
 #### Technologies:
-* Node / Express
-* MongoDB
-* Docker
+
+- Node / Express
+- MongoDB
+- Docker
 
 #### Local setup
 
